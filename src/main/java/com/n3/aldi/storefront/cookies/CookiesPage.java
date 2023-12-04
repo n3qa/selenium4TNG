@@ -45,22 +45,22 @@ public class CookiesPage extends CommonPage {
         }
 
     public void clickOnCookiesSettingsFor(String option) {
-        log.info("# The user is about to click on accept all cookie settings.");
+
+
         log.info("The user is waiting the fast decision cookie settings window to appear");
         waitForPresenceOfOf(cookiesMainDiv, Duration.ofSeconds(10));
         try {
-            log.info("# The user is about to click  on accept all cookie settings");
+            log.info(String.format("# The user is about to click on cookie option for:  %s",  option));
             SearchContext  shadowRoot = driver.findElement(cookiesMainDiv).getShadowRoot();
 
             //Constructing dynamic locator for the different cookie settings buttons
             String cssLocator = String.format("button[data-testid=uc-%s",  option);
-            WebElement debug = shadowRoot.findElement(By.cssSelector("do the code here"));
             WebElement cookieSettingsButton = shadowRoot.findElement(By.cssSelector(cssLocator));
 
             cookieSettingsButton.click();
-            log.info("CONFIRM: The user has clicked on accept all cookies settings button");
+            log.info(String.format("CONFIRM The user has clicked on cookie option for:  %s",  option));
         } catch (NoSuchElementException e) {
-            log.error("The user was not able to click on accept all cookies settings button");
+            log.error(String.format("ERROR The user was not able clicked on cookie option for:  %s",  option));
             throw new RuntimeException(e);
         }
     }
