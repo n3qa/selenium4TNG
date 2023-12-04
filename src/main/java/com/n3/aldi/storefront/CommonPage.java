@@ -96,6 +96,40 @@ public class CommonPage extends BaseTest {
         }
     }
 
+    public void waitForElementToBeClickable(By locator) {
+        int attempts = 0;
+        while (attempts < 3) {
+            try {
+                WebElement elm = driver.findElement(locator);
+                Duration timeOut = Duration.ofSeconds(30);
+                WebDriverWait wait = new WebDriverWait(driver, timeOut);
+                wait.until(ExpectedConditions.elementToBeClickable(locator));
+
+                break;
+            } catch (StaleElementReferenceException e) {
+
+            }
+            attempts++;
+        }
+    }
+
+    public void waitForElementToBeClickable(WebElement element) {
+        int attempts = 0;
+        while (attempts < 3) {
+            try {
+                log.info("Waiting to be clickable a web-element with properties: "+element);
+                Duration timeOut =  Duration.ofSeconds(30);
+                WebDriverWait wait = new WebDriverWait(driver, timeOut);
+                wait.until(ExpectedConditions.elementToBeClickable(element));
+
+                break;
+            } catch (StaleElementReferenceException e) {
+
+            }
+            attempts++;
+        }
+    }
+
     /**
      * <b>For dev reusage  find by element Selenium native method</b>
      * <p>
