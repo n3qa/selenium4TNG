@@ -154,12 +154,12 @@ public class CommonPage extends BaseTest {
 
     //2. PROVIDING NAVIGATION
     /**
-     * <b>The user navigates to Lidl storefront</b>
+     * <b>The user navigates to ALDI storefront</b>
      * <p>
      */
     public void navigateToStoreFront(){
-        log.info("The user navigates to the Lidl storefront");
-        driver.get("https://www.aldi-nord.de");
+        log.info("The user navigates to the ALDI storefront");
+        driver.get("https://www.aldi-onlineshop.de/");
         waitForLoad();
     }
 
