@@ -1,4 +1,4 @@
-package net.lidl.taf.core;
+package net.aldi.taf.core;
 
 import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
