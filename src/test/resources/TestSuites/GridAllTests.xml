@@ -3,7 +3,7 @@
 <suite name="CheckTest" verbose="1" parallel="tests" thread-count="1" >
     <parameter name="environment" value="grid" />
 
-    <test name="Basic Verification for the flow">
+    <test name="Basic Verification for the flow">w
         <parameter name="browser" value="chrome" />
         <parameter name="platform" value="WIN11" />
         <classes>
