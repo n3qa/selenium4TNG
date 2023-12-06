@@ -1,7 +1,7 @@
 version: "3"
 services:
   hub:
-    image: selenium/node-chrome:latest
+    image: selenium/hub:4.15
     ports:
       - 4444:4444
     # - 4442:4442
